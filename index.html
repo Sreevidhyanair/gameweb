@@ -3,13 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Treasure Hunt</title>
+    <title>Treasure Hunt: The Code Breaker’s Quest</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #222; color: white; }
+        .clue { margin: 20px; padding: 15px; background-color: #333; border-radius: 10px; }
+        .hidden { display: none; }
+        #treasure { display: none; font-size: 20px; font-weight: bold; color: gold; }
+        button { padding: 10px 20px; cursor: pointer; margin: 10px; }
+    </style>
 </head>
 <body>
-    <h1>Online Treasure Hunt</h1>
-    <p id="question"></p>
-    <input type="text" id="answer" placeholder="Enter your answer">
-    <button id="submit">Submit</button>
-    <script src="script.js"></script>
+    <h1>🏴‍☠️ Treasure Hunt: The Code Breaker’s Quest 🏴‍☠️</h1>
+    
+    <div class="clue">
+        <p>🔥 Clue 1: The Hidden Tag</p>
+        <p>💬 “I am the backbone of every webpage, but I remain unseen. Find me where the styles begin.”</p>
+    </div>
+    
+    <div class="clue hidden" id="clue2">
+        <p>🎨 Clue 2: Styling Secrets</p>
+        <p>💬 “I give color, I give shape, inspect me to uncover my escape.”</p>
+    </div>
+    
+    <div class="clue hidden" id="clue3">
+        <p>🖱 Clue 3: The Clickable Mystery</p>
+        <p>💬 “Click me once, I change my face. Click me twice, I leave no trace.”</p>
+        <button onclick="changeText(this)">Click Me</button>
+    </div>
+    
+    <div class="clue hidden" id="clue4">
+        <p>🔢 Clue 4: The Number Riddle</p>
+        <p>💬 “Variables hold me, functions mold me. A loop will find my final key.”</p>
+        <button onclick="numberRiddle()">Solve</button>
+    </div>
+    
+    <p id="treasure">🎉 You Found the Treasure! 🎉</p>
+    
+    <script>
+        console.log("🔐 Final Clue: The Hidden Message - Inspect, explore, check the logs. The treasure lies where the console talks.");
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.getElementById("clue2").classList.remove("hidden");
+            }, 3000);
+        });
+        
+        function changeText(btn) {
+            if (btn.innerText === "Click Me") {
+                btn.innerText = "Clicked!";
+            } else {
+                document.getElementById("clue4").classList.remove("hidden");
+                btn.parentElement.style.display = "none";
+            }
+        }
+        
+        function numberRiddle() {
+            let sum = 0;
+            for (let i = 1; i <= 10; i++) {
+                sum += i;
+            }
+            if (sum === 55) {
+                document.getElementById("treasure").style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
