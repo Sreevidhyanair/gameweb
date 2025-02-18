@@ -3,13 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Treasure Hunt</title>
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="style.css"> <!-- Linking the external CSS -->
 </head>
 <body>
-    <h1>Online Treasure Hunt</h1>
-    <p id="question"></p>
-    <input type="text" id="answer" placeholder="Enter your answer">
-    <button id="submit">Submit</button>
-    <script src="script.js"></script>
+    <h1>Software Engineering Treasure Hunt</h1>
+
+    <div class="stage" id="stage1">
+        <h2>Stage 1: SDLC & Agile Methodology</h2>
+        <div class="riddle">"I flow like a stream, from phase to phase, <br>
+            But once I pass, I cannot retrace. <br>
+            No going back, no looking ahead, <br>
+            What model am I? Quick, make your spread!"</div>
+        <input type="text" class="answer-input" id="answer1">
+        <button class="submit-button" onclick="checkAnswer(1, 'Waterfall')">Submit</button>
+        <div class="result" id="result1"></div>
+    </div>
+
+    <div class="stage hidden" id="stage2">
+        <h2>Stage 2: Object-Oriented Programming & UML</h2>
+        <div class="riddle">"I hold all secrets, locked inside, <br>
+            But I let my children freely reside. <br>
+            With properties and methods, I'm a guide, <br>
+            What am I, that you must now decide?"</div>
+        <input type="text" class="answer-input" id="answer2">
+        <button class="submit-button" onclick="checkAnswer(2, 'Class')">Submit</button>
+        <div class="result" id="result2"></div>
+    </div>
+
+    <div class="stage hidden" id="stage3">
+        <h2>Stage 3: Database Normalization</h2>
+        <div class="riddle">"I’m the process that cleans up the mess, <br>
+            Making sure your data is in its best. <br>
+            I split things up and make them neat, <br>
+            What’s my name? Can you repeat?"</div>
+        <input type="text" class="answer-input" id="answer3">
+        <button class="submit-button" onclick="checkAnswer(3, 'Normalization')">Submit</button>
+        <div class="result" id="result3"></div>
+    </div>
+
+    <div class="stage hidden" id="stage4">
+        <h2>Stage 4: Linux Commands</h2>
+        <div class="riddle">"I create a new folder, just for you, <br>
+            And show you what's inside it too. <br>
+            What command should you use to see, <br>
+            The contents of this new directory?"</div>
+        <input type="text" class="answer-input" id="answer4">
+        <button class="submit-button" onclick="checkAnswer(4, 'ls')">Submit</button>
+        <div class="result" id="result4"></div>
+    </div>
+
+    <div id="congratulations" class="hidden">Congratulations! You found the treasure!</div>
+
+    <script src="script.js"></script> <!-- Linking the external JavaScript -->
 </body>
 </html>
