@@ -12,7 +12,7 @@ function checkAnswer(stageNumber, correctAnswer) {
         const currentStage = document.getElementById(`stage${stageNumber}`);
         currentStage.classList.add("hidden");
 
-        if (stageNumber < 4) {
+        if (stageNumber < 5) {
             const nextStage = document.getElementById(`stage${stageNumber + 1}`);
             nextStage.classList.remove("hidden");
         } else {
